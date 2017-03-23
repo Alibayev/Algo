@@ -6,21 +6,21 @@ package com.company.DataStructures;
 public class BinaryTree {
     public void preOrderTraversal(TreeNode node){
         if(node == null) return;
-        System.out.print(node.value + " ");
+        System.out.print(node.data + " ");
         preOrderTraversal(node.left);
         preOrderTraversal(node.right);
     }
     public void inOrderTraversal(TreeNode node){
         if(node == null) return;
         inOrderTraversal(node.left);
-        System.out.print(node.value + " ");
+        System.out.print(node.data + " ");
         inOrderTraversal(node.right);
     }
     public void postOrderTraversal(TreeNode node){
         if(node == null) return;
         postOrderTraversal(node.left);
         postOrderTraversal(node.right);
-        System.out.print(node.value + " ");
+        System.out.print(node.data + " ");
     }
 
     public TreeNode buildFromSortedArray(int[] arr, int start, int end){
@@ -39,8 +39,8 @@ public class BinaryTree {
     private boolean checkIfBSTRecur(TreeNode root, int min, int max){
         if(root == null) return true;
 
-        return (root.value > min && root.value < max
-                && checkIfBSTRecur(root.left, min, root.value)
-                && checkIfBSTRecur(root.right, root.value, max));
+        return (root.data > min && root.data < max
+                && checkIfBSTRecur(root.left, min, root.data)
+                && checkIfBSTRecur(root.right, root.data, max));
     }
 }
